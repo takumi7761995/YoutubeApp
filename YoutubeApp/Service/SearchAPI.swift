@@ -20,7 +20,7 @@ protocol APIRequestType {
 
 struct SearchRequest: APIRequestType {
   let query: String
-  var APIKey: String { return "AIzaSyDu4miZVNT7PAWcEqzFTMRyfkhZGqTZn80" } // YOUR_API_KEY
+  var APIKey: String { return "" } // YOUR_API_KEY
   var part: String { return "snippet" }
   var path: String { return "/youtube/v3/search" }
   var limit: Int { return 10 } // API is default 5
@@ -32,7 +32,6 @@ struct SearchRequest: APIRequestType {
       .init(name: "q", value: query)
     ]
   }
-  
 }
 
 // MARK: - API request
