@@ -14,19 +14,16 @@ protocol APIRequestType {
   var APIKey: String {get}
   var part: String {get}
   var path: String {get}
-  var limit: Int {get}
   var queryItems: [URLQueryItem] {get}
- 
 }
 
 
 struct SearchRequest: APIRequestType {
-  
   let query: String
-  var APIKey: String { return "" } // YOUR_API_KEY
+  var APIKey: String { return "AIzaSyDu4miZVNT7PAWcEqzFTMRyfkhZGqTZn80" } // YOUR_API_KEY
   var part: String { return "snippet" }
   var path: String { return "/youtube/v3/search" }
-  var limit: Int { return 10 }
+  var limit: Int { return 10 } // API is default 5
   var queryItems: [URLQueryItem] {
     return [
       .init(name: "key", value: APIKey),

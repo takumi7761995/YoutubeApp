@@ -45,7 +45,9 @@ struct MovieListView: View {
       return Text(error.localizedDescription).eraseToAnyView()
     }
   }
-  
+}
+
+extension MovieListView {
   @ViewBuilder
   private func list(of movies: [MovieListViewModel.Movie]) -> some View {
     ScrollView(showsIndicators: false) { // LazyVStack inside ScrollView
@@ -53,15 +55,9 @@ struct MovieListView: View {
         ForEach(viewModel.movies) { movie in
           MovieItem(movie: movie)
         }
-        //        ForEach(0..<15) { _ in
-        //          RoundedRectangle(cornerRadius: 15)
-        //            .frame(width: 200, height: 200)
-        //            .foregroundColor(.white)
-        //        }
       }
     }
   }
-  
   
   private func setBackground() -> some View{
     let gradient = Gradient(stops: [
@@ -75,6 +71,7 @@ struct MovieListView: View {
 }
 
 
+
 struct MovieItem: View {
   let movie: MovieListViewModel.Movie
   
@@ -85,14 +82,6 @@ struct MovieItem: View {
           .resizable()
           .scaledToFill()
           .frame(height: 200)
-        //          .overlay(alignment: .bottomLeading) {
-        //            Text(movie.channelTitle)
-        //              .bold()
-        //              .lineLimit(1)
-        //              .foregroundColor(.white)
-        //              .font(.title)
-        //              .padding()
-        //          }
           .cornerRadius(15)
           .padding()
       } placeholder: {

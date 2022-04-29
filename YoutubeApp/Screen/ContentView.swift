@@ -43,7 +43,7 @@ struct ContentView: View {
 
 extension ContentView {
   @ViewBuilder
-  private func createTabItem(tabItem: TabItem) -> some View{
+  private func createTabItem(tabItem: TabItem) -> some View {
     ZStack {
       Image(systemName: tabItem.item.image)
       Text(tabItem.item.label)
