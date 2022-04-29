@@ -23,7 +23,7 @@ protocol APIRequestType {
 struct SearchRequest: APIRequestType {
   
   let query: String
-  var APIKey: String { return "AIzaSyCDCN-9ncNDKmN7mrkuaYsLMqczeWeFzlU" }
+  var APIKey: String { return "" } // YOUR_API_KEY
   var part: String { return "snippet" }
   var path: String { return "/youtube/v3/search" }
   var limit: Int { return 10 }
